@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: jwt-risk-auth-postgres
+    environment:
+      POSTGRES_USER: jwt_user
+      POSTGRES_PASSWORD: jwt_password
+      POSTGRES_DB: jwt_risk_auth
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U jwt_user -d jwt_risk_auth"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres_data:
