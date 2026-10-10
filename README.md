@@ -2,7 +2,7 @@
 
 JWT-Risk-Auth is a FastAPI project for reproducing and extending a behavior-aware JWT authentication method. It starts from the idea in *Enhancing JWT Authentication and Authorization in Web Applications Based on User Behavior History*: login should not depend only on a password check, because the login context also says something about whether the request looks normal.
 
-The project keeps the original paper-style decision flow as a baseline, then adds a small risk scoring model that considers failed attempts, IP changes, device changes, login time, token-related events, and recent abnormal behavior. It is meant to be easy to run, inspect, test, and use as supporting code for an authentication experiment.
+The project keeps the original paper-style decision flow as a baseline, then adds a small risk scoring model that considers failed attempts, IP changes, device changes, login time, token-related events, and recent abnormal behavior. 
 
 ## What it is
 
